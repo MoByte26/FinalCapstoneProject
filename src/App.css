@@ -19,7 +19,6 @@
   form {
     font-size: x-large;
   }
-  a
 
   input {
     margin-left: 1em;
@@ -36,7 +35,6 @@
   .homeDiv {
     background-image: url(https://images.unsplash.com/photo-1623351143485-b1d4937747f3?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     z-index: 2;
-    /* position: relative; */
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
