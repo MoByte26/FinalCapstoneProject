@@ -21,6 +21,20 @@ Atelier's success can be attributed to its unwavering dedication to quality and 
 <br></br>
 <br></br>
 <br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 
       </div>
     )

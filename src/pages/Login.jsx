@@ -10,7 +10,7 @@ const Login = ({setUser}) => {
     })
     console.log('Form Submitted!');
     //redirecting to products page after login!
-    navigate('/profile');
+    // navigate('/profile');
   }
   
   return (
