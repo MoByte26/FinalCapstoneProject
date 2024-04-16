@@ -5,7 +5,7 @@ const Product = () => {
   const product = products.find(product => product.id === parseInt(productId));
   const { name, price } = product;
   return (
-    <div>
+    <div className="productCard">
       <h1>{name}</h1>
       <h2>${price}</h2>
     </div>

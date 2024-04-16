@@ -14,13 +14,18 @@ p {
 }
 
 body {
-  min-height: 100vh;
+
 }
 
 h1 {
   font-size: 4.2em;
   line-height: 1.1;
   color: #000000;
+}
+
+h2 {
+  background-color:rgb(241, 241, 241);
+
 }
 
 form {
@@ -33,4 +38,12 @@ form {
     background-color: rgba(0,0,0,.5);
   color: #fff;
   backdrop-filter:blur(5px);
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  border-style: line;
+  border-radius: 30px;
+  margin-top: 15px;
+  border-width: .1px;
 }

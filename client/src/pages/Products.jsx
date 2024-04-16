@@ -19,13 +19,19 @@ const Products = () => {
         getProducts() 
         console.log(products)
 }, [])
-return (<div>
+return (<div className="allProduct">
   { products.map(product => {
     return ( 
-      <section key={product.id}>
+      <section className="productCard" key={product.id}>
         <h2>{product.name}</h2>
         <img src={product.img_url}/>
-        <p>{product.description}</p>
+        <button
+        onClick={() => {
+          navigate(`/${product.id}`);
+        }}
+      >
+        See Details
+      </button>
       </section>
     )
   })}
