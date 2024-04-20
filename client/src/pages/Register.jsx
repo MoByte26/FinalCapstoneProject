@@ -8,14 +8,14 @@ const Register = () => {
         console.log('Form submitted!')
     }
     return (
-      <div>
+      <div className="registerDiv">
         <h1>Join the club</h1>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username</label>
+        <form onSubmit={handleSubmit} className="registerDivBottom">
+            <label className="labels" htmlFor="username">Username</label>
             <input type="text" id="username" />
             <br></br>
             <br></br>
-            <label htmlFor="password">Create Password</label>
+            <label className="labels" htmlFor="password">Create Password</label>
             <input type="password" id="password" />
             <Button />
         </form>

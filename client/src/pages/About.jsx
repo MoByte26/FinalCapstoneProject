@@ -1,6 +1,7 @@
 const About = () => { 
     return (
       <div className="aboutDiv">
+        
 <br></br>
 
         <h1 className="Tale">The tale of Atelier</h1>

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [filterText, setFilterText] = useState("");
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate()
+  
   
 
   useEffect (() => {
@@ -19,6 +22,7 @@ const Products = () => {
         getProducts() 
         console.log(products)
 }, [])
+
 return (<div className="allProduct">
   { products.map(product => {
     return ( 
@@ -33,6 +37,7 @@ return (<div className="allProduct">
         See Details
       </button>
       </section>
+
     )
   })}
 </div>)

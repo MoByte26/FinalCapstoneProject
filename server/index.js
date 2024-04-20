@@ -29,7 +29,7 @@ const isLoggedIn = async(req, res, next)=> {
 };
 
 
-app.post('/src/pages/login', async(req, res, next)=> {
+app.post('/api/login', async(req, res, next)=> {
   try {
     res.send(await authenticate(req.body));
   }
@@ -38,7 +38,7 @@ app.post('/src/pages/login', async(req, res, next)=> {
   }
 });
 
-app.get('/src/pages/login', isLoggedIn, (req, res, next)=> {
+app.get('/api/me', isLoggedIn, (req, res, next)=> {
   try {
     res.send(req.user);
   }
@@ -155,11 +155,11 @@ const init = async()=> {
   await client.query(SQL);
   console.log('tables created');
   SQL = `
-    INSERT INTO purses(name, description, img_url) VALUES('The New York - 2500', 'The New York is a sophisticated and luxurious purse designed for those who appreciate high-quality craftsmanship and timeless style. Made from supple leather and featuring elegant gold accents, this purse exudes elegance and sophistication. With multiple compartments and a versatile design, The New York is the perfect accessory for the modern woman on the go. Elevate any outfit with this chic and versatile purse that embodies the glamour and sophistication of the city that never sleeps.', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHVyc2V8ZW58MHx8MHx8fDA%3D' );
+    INSERT INTO purses(name, description, img_url) VALUES('The New York', 'The New York is a sophisticated and luxurious purse designed for those who appreciate high-quality craftsmanship and timeless style. Made from supple leather and featuring elegant gold accents, this purse exudes elegance and sophistication. With multiple compartments and a versatile design, The New York is the perfect accessory for the modern woman on the go. Elevate any outfit with this chic and versatile purse that embodies the glamour and sophistication of the city that never sleeps.', 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHVyc2V8ZW58MHx8MHx8fDA%3D' );
 
     INSERT INTO purses(name, description, img_url) VALUES('The Rome', 'The Rome is a luxurious and sophisticated purse, crafted from the finest Italian leather and designed with meticulous attention to detail. Its timeless design exudes elegance and class, making it the perfect accessory for any upscale event or special occasion. Featuring multiple compartments and gold-plated hardware, The Rome is not only stylish but also practical, offering ample space to carry all your essentials in style. Elevate your look with The Rome and indulge in the ultimate luxury experience.', 'https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHVyc2V8ZW58MHx8MHx8fDA%3D');
 
-    INSERT INTO purses(name, description, img_url) VALUES('The Prague - 2500', 'The Prague is a sleek and sophisticated luxury purse crafted from the finest materials. Featuring a timeless design with intricate detailing, this handbag exudes elegance and refinement. Perfect for adding a touch of glamour to any outfit, The Prague is a must-have accessory for the modern fashionista. With its spacious interior and high-quality construction, this purse is the epitome of luxury and style. Elevate your look with The Prague and make a statement wherever you go.', 'https://images.unsplash.com/photo-1591561954555-607968c989ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHB1cnNlfGVufDB8fDB8fHww');
+    INSERT INTO purses(name, description, img_url) VALUES('The Prague', 'The Prague is a sleek and sophisticated luxury purse crafted from the finest materials. Featuring a timeless design with intricate detailing, this handbag exudes elegance and refinement. Perfect for adding a touch of glamour to any outfit, The Prague is a must-have accessory for the modern fashionista. With its spacious interior and high-quality construction, this purse is the epitome of luxury and style. Elevate your look with The Prague and make a statement wherever you go.', 'https://images.unsplash.com/photo-1591561954555-607968c989ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHB1cnNlfGVufDB8fDB8fHww');
 
     INSERT INTO purses(name, description, img_url) VALUES('The Paris', 'The Paris is a sophisticated and elegant luxury purse that exudes timeless charm and French flair. Crafted from the finest materials, this exquisite handbag features meticulous attention to detail, from its sleek design to its luxurious finish. Perfect for the modern woman who appreciates both style and functionality, The Paris is a must-have accessory for those who appreciate the finer things in life. Elevate your outfit and make a statement with The Paris, a true embodiment of luxury and grace.', 'https://images.unsplash.com/photo-1606522754091-a3bbf9ad4cb3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHB1cnNlfGVufDB8fDB8fHww');
 
@@ -198,8 +198,8 @@ const init = async()=> {
   await client.query(SQL);
   console.log('data seeded');
 
-  const [momo] = await Promise.all([
-    createUser({ username: 'momo', password: 'm_pw'}),
+  const [Monica] = await Promise.all([
+    createUser({ username: 'Monica', password: 'm_pw'}),
   ]);
 
   console.log(await fetchUsers());
