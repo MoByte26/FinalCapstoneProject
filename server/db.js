@@ -25,7 +25,9 @@ const createTables = async()=> {
       INSERT INTO users(id, username, password) VALUES($1, $2, $3) RETURNING *
     `;
     const response = await client.query(SQL, [uuid.v4(), username, await bcrypt.hash(password, 5)]);
-    return response.rows[0];
+    console.log("response from createUser" , response);
+    const token = await jwt.sign({ id: response.rows[0].id}, JWT);
+    return {user:response.rows[0], token};
   };
   
   const authenticate = async({ username, password })=> {
