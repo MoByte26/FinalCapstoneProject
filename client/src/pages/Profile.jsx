@@ -20,7 +20,7 @@ console.log(user)
         Checkout our products page for the newest trends and be the envy of your friends
         <br></br>
         <br></br>
-          *Free shipping with qualifying purchase of $2000 or more*
+          *Free shipping with qualifying purchase of $4000 or more*
           <br></br>
           <br></br>
           ~Fall in love with our 2024 Spring Collection~</h3> </p>

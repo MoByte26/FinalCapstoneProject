@@ -16,5 +16,24 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('sk_test_51P72eAAmi8K5S7v9fi9yduD7wfLpvgGe7OBfVgvfBhfme0DjDdhiwKOTnp4g99ptZKUaaBDUy5I7oGtbDobnaXoE00fBhL9i0e');
+        const checkoutButton = document.getElementById('checkout-button');
+        checkoutButton.addEventListener('click', () => {
+            fetch('/create-checkout-session', {
+                method: 'POST',
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(session) {
+                return stripe.redirectToCheckout({ sessionId: session.id });
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+            });
+        });
+    </script>
   </body>
 </html>

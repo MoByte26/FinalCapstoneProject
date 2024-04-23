@@ -19,8 +19,6 @@ const navigate = useNavigate();
             <input type="text" className="boxDiv"/>
             <h3>Expiry Date</h3>
             <input type="text" className="boxDiv"/>
-            <h3>Expiry Date</h3>
-            <input type="text" className="boxDiv"/>
             <h3>CVV</h3>
             <input type="text" className="boxDiv"/>
             <br></br>
